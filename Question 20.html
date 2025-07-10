@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JavaScript DOM Interaction</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f9ff;
+      color: #333;
+      padding: 40px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #1976d2;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    #message, #displayText {
+      margin-top: 20px;
+      font-size: 1.1em;
+      background-color: #fff;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .btn-group {
+      margin-top: 15px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      flex: 1;
+      padding: 12px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0d47a1;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎯 JavaScript DOM Interaction</h2>
+
+  <!-- Task 1: Change message text -->
+  <button onclick="changeMessage()">Change Message</button>
+  <p id="message">This is the original message.</p>
+
+  <!-- Task 2: Input + Display text -->
+  <input type="text" id="userInput" placeholder="Type something..." />
+
+  <div class="btn-group">
+    <button onclick="showInput()">Show Text</button>
+    <button onclick="clearAll()">Clear</button>
+  </div>
+
+  <p id="displayText">Your text will appear here.</p>
+
+  <footer>
+    &copy; 2025 | JavaScript Practice Demo
+  </footer>
+
+  <script>
+    function changeMessage() {
+      document.getElementById("message").textContent = "✅ The message has been changed!";
+    }
+
+    function showInput() {
+      const inputText = document.getElementById("userInput").value.trim();
+      document.getElementById("displayText").textContent =
+        inputText || "⚠️ Please enter some text!";
+    }
+
+    function clearAll() {
+      document.getElementById("userInput").value = "";
+      document.getElementById("message").textContent = "This is the original message.";
+      document.getElementById("displayText").textContent = "Your text will appear here.";
+    }
+  </script>
+
+</body>
+</html>
